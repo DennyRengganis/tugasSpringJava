@@ -15,7 +15,9 @@
     <bean id="myTypes1"
     	class="com.denny.classes.types.STRtypes">    
     </bean>
-    
+    <bean id="myTypes2"
+    	class="com.denny.classes.types.AGItypes">    
+    </bean>
     <bean id="myHero_1"
     	class="com.denny.classes.heroes.Axe" scope="prototype">
   		
@@ -26,6 +28,18 @@
     	    	
     	<!-- Setter injection --> 
 		<property name="type" ref="myTypes1"></property>
+    	
+    </bean>
+        <bean id="myHero_2"
+    	class="com.denny.classes.heroes.Slark" scope="prototype">
+  		
+  		<!-- Properties file injection -->
+    	<property name="strength" value="${heroes.strength}"></property>
+    	<property name="inteligent" value="${heroes.inteligent}"></property>
+    	<property name="agility" value="${heroes.agility}"></property>
+    	    	
+    	<!-- Setter injection --> 
+		<property name="type" ref="myTypes2"></property>
     	
     </bean>
 
